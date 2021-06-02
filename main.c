@@ -36,27 +36,27 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
 
-    *(void**)(&formula_name) = dlsym(handle, "print_name");
-    if (!formula_name) {
+    *(void**)(&formula_printf) = dlsym(handle, "print_name");
+    if (!formula_printf) {
         /* no such symbol */
         fprintf(stderr, "Error: %s\n", dlerror());
         dlclose(handle);
         return EXIT_FAILURE;
     }
 
-    formula_name(argv[1]);
+    formula_printf(argv[1]);
 
     if (argc == 3) {
-        *(void**)(&formula_name) = dlsym(handle2, "print_name");
+        *(void**)(&formula_printf) = dlsym(handle2, "print_name");
 
-        if (!formula_name) {
+        if (!formula_printf) {
             /* no such symbol */
             fprintf(stderr, "Error: %s\n", dlerror());
             dlclose(handle2);
             return EXIT_FAILURE;
         }
 
-        formula_name(argv[2]);
+        formula_printf(argv[2]);
 
     }
 
