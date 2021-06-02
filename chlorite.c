@@ -1,5 +1,5 @@
 #include "chemical.h"
 
-void chemical_name (char vonst *formula) {
-    printf("The IUPACname is %s.\n", formula);
+void chemical_name (char const *formula) {
+    printf("The IUPAC name is %s.\n", formula);
 }
