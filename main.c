@@ -5,8 +5,10 @@
 
 int main(int argc, char** argv) {
     void *handle;
-    void *handle2;
     void (*formula_printf)(const char*);
+    if (argc == 3) {
+        void *handle2;
+    }
 
     if (argc !=2 || argc != 3) {
         fprintf(stderr, "Improper number of arguments.\n", argv[0]);
