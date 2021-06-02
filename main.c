@@ -5,10 +5,8 @@
 
 int main(int argc, char** argv) {
     void *handle;
+    void *handle2;
     void (*formula_printf)(const char*);
-    if (argc == 3) {
-        void *handle2;
-    }
 
     if (argc !=2 || argc != 3) {
         fprintf(stderr, "Improper number of arguments.\n", argv[0]);
@@ -16,17 +14,17 @@ int main(int argc, char** argv) {
     }
 
     if (strcmp(argv[1], "HOCl") == 0) {
-        handle = dlopen("./chlorine.so");
+        handle = dlopen("./chlorine.so", RTLD_NOW);
     } else if (strcmp(argv[1], "HOBr") == 0) {
-        handle = dlopen("./bromine.so");
+        handle = dlopen("./bromine.so", RTLD_NOW);
     } else if (strcmp(argv[1], "HOCl") == 0 
-               && strcmp(argv[2], "HOBr" == 0) {
-        handle = dlopen("./chlorine.so");
-        handle2 = dlopen("./bromine.so");
+               && strcmp(argv[2], "HOBr") == 0) {
+        handle = dlopen("./chlorine.so", RTLD_NOW);
+        handle2 = dlopen("./bromine.so", RTLD_NOW);
     } else if (strcmp(argv[1], "HOBr") == 0 
-               && strcmp(argv[2], "HOCl" == 0) {
-        handle = dlopen("./bromine.so");
-        handle2 = dlopen("./chlorine.so");
+               && strcmp(argv[2], "HOCl") == 0) {
+        handle = dlopen("./bromine.so", RTLD_NOW);
+        handle2 = dlopen("./chlorine.so", RTLD_NOW);
     } else {
         fprintf(stderr, "Error: unknown formula: %s\n", argv[1]);
         return EXIT_FAILURE;
