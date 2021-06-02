@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
     void (*formula_printf)(const char*);
 
     if (argc !=2 || argc != 3) {
-        fprintf(stderr, "Improper number of arguments.\n", argv[0]);
+        fprintf(stderr, "Improper number of arguments : %s .\n", argv[0]);
         return EXIT_FAILURE;
     }
 
