@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
 
-    *(void**)(&formula_printf) = dlsym(handle, "print_name");
+    *(void**)(&formula_printf) = dlsym(handle, "chemical_name");
     if (!formula_printf) {
         /* no such symbol */
         fprintf(stderr, "Error: %s\n", dlerror());
@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
     formula_printf(argv[1]);
 
     if (argc == 3) {
-        *(void**)(&formula_printf) = dlsym(handle2, "print_name");
+        *(void**)(&formula_printf) = dlsym(handle2, "chemical_name");
 
         if (!formula_printf) {
             /* no such symbol */
