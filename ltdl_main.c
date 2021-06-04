@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
         return EXIT_FAILURE;
     }
     printf("Dlsym1?\n");
-    *(void**)(&formula_printf) = lt_dlsym(lt_dlpreload(), "chemical_name");
+    *(void**)(&formula_printf) = lt_dlsym(handle, "chemical_name");
     if (!formula_printf) {
         // no such symbol 
         fprintf(stderr, "Error: %s\n", lt_dlerror());
