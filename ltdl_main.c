@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Error: %s\n", lt_dlerror());
         return EXIT_FAILURE;
     }
-    printf("Dlsym1?\n");
+    
     *(void**)(&formula_printf) = lt_dlsym(handle, "chemical_name");
     if (!formula_printf) {
         // no such symbol 
@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
            // fail to load the library 
             fprintf(stderr, "Error: %s\n", lt_dlerror());
             return EXIT_FAILURE;
-        }/
+        }
 
         *(void**)(&formula_printf) = lt_dlsym(handle2, "chemical_name");
 
