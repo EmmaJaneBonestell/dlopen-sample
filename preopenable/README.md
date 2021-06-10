@@ -6,5 +6,5 @@ with an appropriately compiled libltdl version.
 
 gcc -static -Wl,-static -o main main.c bromine.c chlorine.c -lltdl -ldl
 
-To confirm, just run strace ./maim HOCl HOBr . Note how no calls to the filesystem (to find chlorine.so
+To confirm, just run strace ./main HOCl HOBr . Note how no calls to the filesystem (to find chlorine.so
 and bromine.so) are made.
