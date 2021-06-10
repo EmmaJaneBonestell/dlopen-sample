@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
     extern int chlorine_LTX_chemical_name();
 
 //  The array of structures is in the format of const char *, void *addr.
-//  It will begin with "@PROGRAM", void * 0 and end with 0, void * 0.
+//  It will begin with "@PROGRAM@", void * 0 and end with 0, void * 0.
 //  All strings must be null terminated. Inbetween, you will declare
 //  the source file name, followed by all the symbols from it you wish
 //  to use. The symbols will be void cast to their own address. 
