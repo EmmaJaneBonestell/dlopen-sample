@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
 //  Note that the source file is the basename chlorine with the extension
 //  ".a" -- this will always be the case.
         {"chlorine_LTX_chemical_name", (void *) &chlorine_LTX_chemical_name},
-//  If you had more symnbols from chlorine.c, they would go before bromine.
+//  If you had more symbols from chlorine.c, they would go before bromine.
         {"bromine.a", (void *) 0},
         {"bromine_LTX_chemical_name", (void *) &bromine_LTX_chemical_name},
         {0, (void *) 0}
