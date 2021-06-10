@@ -1,4 +1,4 @@
-Unless ypu have a version of libltdl compiled without support for libdl (or your OS's equivalent), 
+Unless you have a version of libltdl compiled without support for libdl (or your OS's equivalent), 
 you will still be dependent on libdl. 
 
 This can be compiled with a single line, and you may remove "-ldl" if you replace "-lltdl" 
